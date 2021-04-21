@@ -29,22 +29,22 @@
             <form class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h1 class="card-title">Payment form example</h1>
+                        <h1 class="card-title">Payment form example with Validation</h1>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-danger" role="alert">
+                        <div class="alert alert-danger d-none" role="alert">
                             Some fields are missing
                         </div>
                         <div class="row">
                             <div class="form-group col-5">
-                                <label for="exampleFormControlInput1">Card #</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="XXXXXXXX">
+                                <label for="cardNumber">Card #</label>
+                                <input type="text" class="form-control" id="cardNumber"
+                                    placeholder="XXXX-XXXX-XXXX-XXXX" required />
                             </div>
                             <div class="form-group col-3">
-                                <label for="exampleFormControlInput1">CVC #</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1"
-                                    placeholder="0000">
+                                <label for="cvcNumber">CVC #</label>
+                                <input type="text" class="form-control" id="cvcNumber"
+                                    placeholder="0000" required />
                             </div>
                             <div class="form-group col">
                                 <label for="exampleFormControlInput1 ">Amount</label>
@@ -53,66 +53,66 @@
                                         <div class="input-group-text">$</div>
                                     </div>
                                     <input type="text" class="form-control" id="exampleFormControlInput1"
-                                        placeholder="Amount">
+                                        placeholder="Amount" required />
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1">First Name</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                <label for="firtName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="" required />
                             </div>
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1">Last Name</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="" required />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-6">
-                                <label for="exampleFormControlInput1">City</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                <label for="cityName">City</label>
+                                <input type="text" class="form-control" id="cityName" placeholder="" required />
                             </div>
                             <div class="form-group col">
-                                <label class="mr-sm-2" for="inlineFormCustomSelect">State</label>
-                                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                                    <option selected>Pick state</option>
+                                <label class="mr-sm-2" for="stateName">State</label>
+                                <select class="custom-select mr-sm-2" id="stateName" required >
+                                    <option disabled>Pick state</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
                             </div>
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1">Postal Code</label>
+                                <label for="postalCode">Postal Code</label>
                                 <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
                             </div>
                         </div>
                         <div class="row justify-content-between">
 
                             <div class="form-group col-3">
-                                <label for="inlineRadio1">We accept:</label>
+                                <label for="aceptedCards">We accept:</label>
                                 <div class="p-3 mb-2 bg-dark text-white rounded">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio1" value="option1">
+                                        <input class="form-check-input" type="radio" name="aceptedCards"
+                                            id="aceptedCard1" value="mastercard">
                                         <label class="form-check-label" for="inlineRadio1"><i
                                                 class="fab fa-cc-mastercard"></i></label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio2" value="option2">
+                                        <input class="form-check-input" type="radio" name="aceptedCard"
+                                            id="aceptedCard2" value="visa">
                                         <label class="form-check-label" for="inlineRadio2"><i
                                                 class="fab fa-cc-visa"></i></label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="aceptedCards"
+                                            id="aceptedCard3" value="diners">
                                         <label class="form-check-label" for="inlineRadio3"><i
                                                 class="fab fa-cc-diners-club"></i>
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
-                                            id="inlineRadio3" value="option3">
+                                        <input class="form-check-input" type="radio" name="aceptedCards"
+                                            id="aceptedCard4" value="amex">
                                         <label class="form-check-label" for="inlineRadio3"><i
                                                 class="fab fa-cc-amex"></i></label>
                                     </div>
@@ -120,8 +120,8 @@
                             </div>
 
                             <div class="form-group col-6">
-                                <label for="exampleFormControlTextarea1">Message</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="3"></textarea>
                                 <small id="messageHelp" class="form-text text-muted">Add any notes here</small>
                             </div>
                         </div>
