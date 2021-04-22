@@ -21,54 +21,54 @@
 
     <div class="container">
         <div class="vh-100 row align-items-center justify-content-center">
-            <form class="col-12" id="sampleForm" method="post" acion="">
+            <form class="col-12" id="paymentForm" method="post" acion="" data-toggle="validator">
                 <div class="card">
                     <div class="card-header">
                         <h1 class="card-title">Payment form example with Validation</h1>
                     </div>
                     <div class="card-body">
-                        <div class="alert alert-danger d-none" role="alert">
-                            Some fields are missing
+                        <div class="alert alert-danger d-none" role="alert" id="alert">
+                            <span id="error"></span>
                         </div>
                         <div class="row">
                             <div class="form-group col-5">
                                 <label for="cardNumber">Card #</label>
-                                <input type="text" class="form-control" id="cardNumber"
-                                    placeholder="XXXX-XXXX-XXXX-XXXX" required />
+                                <input type="text" class="form-control" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" data-error="Invalid card number." data-success="Correct credit card number"/>
+                                <span  id="help" class="helper-text">Enter a valid credit card number</span>
                             </div>
                             <div class="form-group col-3">
                                 <label for="cvcNumber">CVC #</label>
-                                <input type="text" class="form-control" id="cvcNumber" placeholder="0000" required />
+                                <input type="number" class="form-control number" id="cvcNumber" placeholder="000" />
                             </div>
                             <div class="form-group col">
-                                <label for="exampleFormControlInput1 ">Amount</label>
+                                <label for="amount">Amount</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">$</div>
                                     </div>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1"
-                                        placeholder="Amount" required />
+                                    <input type="number" class="form-control number" id="amount"
+                                        placeholder="Amount" />
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col">
                                 <label for="firtName">First Name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="" required />
+                                <input type="text" class="form-control" id="firstName" placeholder="" />
                             </div>
                             <div class="form-group col">
                                 <label for="lastName">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" placeholder="" required />
+                                <input type="text" class="form-control" id="lastName" placeholder="" />
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-6">
                                 <label for="cityName">City</label>
-                                <input type="text" class="form-control" id="cityName" placeholder="" required />
+                                <input type="text" class="form-control" id="cityName" placeholder="" />
                             </div>
                             <div class="form-group col">
                                 <label class="mr-sm-2" for="stateName">State</label>
-                                <select class="custom-select mr-sm-2" id="stateName" required>
+                                <select class="custom-select mr-sm-2" id="stateName">
                                     <option disabled>Pick state</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
@@ -115,7 +115,7 @@
 
                             <div class="form-group col-6">
                                 <label for="message">Message</label>
-                                <textarea class="form-control" id="message" rows="3"></textarea>
+                                <textarea class="form-control" id="message" rows="3" name="message"></textarea>
                                 <small id="messageHelp" class="form-text text-muted">Add any notes here</small>
                             </div>
                         </div>
